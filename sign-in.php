@@ -158,11 +158,11 @@ $conn->close();
         }
         
         .welcome-text {
-            color: #fff;
-            font-size: 1.25rem;
+            color: white;
             text-align: center;
-            margin-top: 12px;
-            line-height: 1.4;
+            margin-top: 0.75rem;
+            line-height: 1.6;
+            font-size: 1rem;
         }
         
         /* Right Panel - Merged Design */
@@ -178,43 +178,41 @@ $conn->close();
             box-sizing: border-box;
         }
         
-        /* Tab Group */
+        /* Tab Group (match sign-up) */
         .tab-group {
             display: flex;
             width: 100%;
             max-width: 760px;
-            background: transparent;
-            border-radius: 0;
-            margin-bottom: 28px;
-            overflow: visible;
-            height: auto;
+            background: #f5f6fa;
+            border-radius: 1rem;
+            margin-bottom: 1.75rem;
+            overflow: hidden;
+            height: 3.5rem;
             align-items: center;
-            gap: 16px;
-            justify-content: center;
         }
-        
+
         .tab-btn {
-            flex: 0 0 auto;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             background: transparent;
+            color: #5d7c76;
             border: none;
-            font-size: 1.05rem;
-            color: #999;
+            border-radius: 1rem;
+            height: 2.5rem;
+            margin: 0 0.5rem;
             cursor: pointer;
-            font-weight: 500;
-            border-radius: 12px;
-            padding: 12px 40px;
             transition: all 0.3s ease;
-            min-width: 140px;
+            font-size: 1rem;
+            font-weight: 500;
         }
-        
+
         .tab-btn.active {
-            background: #fff;
+            background: white;
             color: #22594b;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         /* Form Container */
