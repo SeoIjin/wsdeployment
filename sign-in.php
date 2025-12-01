@@ -115,28 +115,27 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BCDRS System - Sign In</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
         
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', 'Quicksand', Arial, sans-serif;
+        body {
+            background: white;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .container {
             display: flex;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            width: 100%;
+            min-height: 100vh;
         }
         
         /* Left Panel - Merged Design */
@@ -175,6 +174,8 @@ $conn->close();
             align-items: center;
             justify-content: center;
             padding: 56px;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         /* Tab Group */
@@ -247,6 +248,7 @@ $conn->close();
         
         .form-content {
             width: 100%;
+            max-width: 760px;
         }
         
         /* Error Message */
@@ -759,361 +761,141 @@ $conn->close();
             opacity: 0.9;
         }
             
-        /* Responsive Design */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .left-panel {
-        min-height: 300px;
-        padding: 2.5rem 1.5rem;
-    }
-    
-    .right-panel {
-        min-width: auto;  /* This removes the min-width on tablets/mobile */
-        padding: 2.5rem 1.5rem;
-    }
-    
-    .logo-img {
-        width: 220px;
-        max-width: 60%;
-    }
-}
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .left-panel {
-        display: none;  /* Hide left panel on mobile */
-    }
-    
-    .right-panel {
-        min-width: 100%;
-        width: 100%;
-        padding: 2rem 1rem;
-    }
-    
-    .form-container {
-        max-width: 100%;
-    }
-    
-    .form-title {
-        font-size: 1.375rem;
-    }
-    
-    .form-subtitle {
-        font-size: 0.875rem;
-    }
-    
-    .input-label {
-        font-size: 0.875rem;
-    }
-    
-    .input-box {
-        font-size: 0.9375rem;
-        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
-    }
-    
-    .submit-btn {
-        padding: 0.875rem;
-        font-size: 1rem;
-    }
-    
-    .bottom-text {
-        font-size: 0.9375rem;
-    }
-    
-    .guest-btn {
-        font-size: 0.9375rem;
-        padding: 0.875rem;
-    }
-    
-    .guest-btn-subtitle {
-        font-size: 0.8125rem;
-    }
-    
-    /* Modal Responsive */
-    .modal-content {
-        max-width: 95%;
-        margin: 1rem;
-        max-height: 85vh;
-    }
-    
-    .modal-header {
-        padding: 1.25rem;
-    }
-    
-    .modal-title {
-        font-size: 1.125rem;
-    }
-    
-    .modal-body {
-        padding: 1.25rem;
-    }
-    
-    .modal-description {
-        font-size: 0.875rem;
-    }
-    
-    .modal-input {
-        font-size: 0.9375rem;
-    }
-    
-    .modal-btn {
-        font-size: 0.875rem;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .footer-section h3 {
-        font-size: 1rem;
-    }
-    
-    .footer-item {
-        font-size: 0.875rem;
-    }
-}
+            .left-panel {
+                min-height: 300px;
+            }
 
-@media (max-width: 640px) {
-    .left-panel {
-        display: none;
-    }
-    
-    .right-panel {
-         min-width: 100%;
-        width: 100%;
-        padding: 1.5rem 1rem;
-    }
-    
-    .logo-img {
-        width: 150px;
-        margin-bottom: 1rem;
-    }
-    
-    .welcome-text {
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
-    
-    .tab-group {
-        height: 2.75rem;
-        gap: 8px;
-        background: #f5f6fa;
-        border-radius: 1rem;
-        padding: 0.375rem;
-    }
-    
-    .tab-btn {
-        font-size: 0.875rem;
-        min-width: 100px;
-        padding: 8px 24px;
-        height: 2.25rem;
-        margin: 0;
-    }
-    
-    .form-title {
-        font-size: 1.25rem;
-    }
-    
-    .form-subtitle {
-        font-size: 0.8125rem;
-    }
-    
-    .input-group {
-        margin-bottom: 1rem;
-    }
-    
-    .input-label {
-        font-size: 0.8125rem;
-        margin-bottom: 0.375rem;
-    }
-    
-    .input-box {
-        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
-        font-size: 0.875rem;
-    }
-    
-    .input-icon {
-        width: 16px;
-        height: 16px;
-        left: 0.625rem;
-    }
-    
-    .eye-toggle {
-        width: 16px;
-        height: 16px;
-        right: 0.625rem;
-    }
-    
-    .options-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-        margin: 0.75rem 0 1.25rem 0;
-    }
-    
-    .checkbox-group label,
-    .forgot-link {
-        font-size: 0.875rem;
-    }
-    
-    .submit-btn {
-        padding: 0.75rem;
-        font-size: 0.9375rem;
-    }
-    
-    .bottom-text {
-        font-size: 0.875rem;
-        margin-top: 1rem;
-    }
-    
-    .divider {
-        margin: 1.25rem 0;
-    }
-    
-    .divider-text {
-        font-size: 0.8125rem;
-    }
-    
-    .guest-btn {
-        padding: 0.75rem;
-        font-size: 0.875rem;
-    }
-    
-    .guest-btn-icon {
-        width: 18px;
-        height: 18px;
-        font-size: 0.8125rem;
-    }
-    
-    .guest-btn-subtitle {
-        font-size: 0.75rem;
-    }
-    
-    /* Modal for Small Screens */
-    .modal {
-        padding: 0.5rem;
-    }
-    
-    .modal-content {
-        max-width: 100%;
-        max-height: 90vh;
-    }
-    
-    .modal-header {
-        padding: 1rem;
-    }
-    
-    .modal-header-content {
-        gap: 8px;
-    }
-    
-    .modal-logo {
-        width: 32px;
-        height: 32px;
-    }
-    
-    .modal-header-text h1 {
-        font-size: 1rem;
-    }
-    
-    .modal-header-text p {
-        font-size: 0.8125rem;
-    }
-    
-    .modal-title {
-        font-size: 1rem;
-    }
-    
-    .modal-close {
-        font-size: 1.75rem;
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-    
-    .modal-body {
-        padding: 1rem;
-    }
-    
-    .modal-description {
-        font-size: 0.8125rem;
-    }
-    
-    .modal-input-label {
-        font-size: 0.875rem;
-    }
-    
-    .modal-input {
-        padding: 0.75rem;
-        font-size: 0.875rem;
-    }
-    
-    .modal-input.otp-input {
-        font-size: 1.25rem;
-    }
-    
-    .modal-input-icon {
-        width: 16px;
-        height: 16px;
-        left: 0.75rem;
-    }
-    
-    .modal-eye-toggle {
-        width: 16px;
-        height: 16px;
-        right: 0.75rem;
-    }
-    
-    .modal-btn {
-        padding: 0.75rem;
-        font-size: 0.8125rem;
-    }
-    
-    .modal-footer {
-        padding: 0.875rem;
-    }
-    
-    .footer-content {
-        padding: 0;
-    }
-    
-    .footer-copyright {
-        font-size: 0.8125rem;
-    }
-}
+            .right-panel {
+                min-width: auto;
+            }
+        }
 
-@media (max-width: 480px) {
-    .logo-img {
-        width: 130px;
-    }
-    
-    .welcome-text {
-        font-size: 0.8125rem;
-    }
-    
-    .tab-btn {
-        font-size: 0.8125rem;
-        min-width: 90px;
-        padding: 8px 20px;
-    }
-    
-    .form-title {
-        font-size: 1.125rem;
-    }
-    
-    .input-box {
-        font-size: 0.8125rem;
-    }
-}
+        @media (max-width: 768px) {
+            .form-container, .form-content {
+                padding: 0;
+            }
+
+            .left-panel {
+                padding: 2rem 1rem;
+            }
+
+            .right-panel {
+                padding: 2rem 1rem;
+            }
+
+            .logo-img {
+                width: 180px;
+                max-width: 48%;
+            }
+
+            .tab-group {
+                gap: 8px;
+                justify-content: center;
+            }
+
+            .tab-btn {
+                padding: 10px 22px;
+                min-width: 120px;
+            }
+
+            .form-title {
+                font-size: 1.25rem;
+            }
+
+            .form-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .input-box {
+                padding: 12px 14px 12px 44px;
+                min-height: 44px;
+            }
+
+            .submit-btn, .guest-btn {
+                padding: 12px 0;
+            }
+
+            .divider-text {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Main Sign In Page -->
+    <div class="container">
+        <div class="left-panel">
+            <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTDCuh4kIpAtR-QmjA1kTjE_8-HSd8LSt3Gw&s" alt="Logo">
+            <div class="welcome-text">
+                Welcome to BCDRS<br>Your friendly assistant is here to help!
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="tab-group">
+                <button class="tab-btn active" type="button" onclick="location.href='sign-in.php'">Sign In</button>
+                <button class="tab-btn" type="button" onclick="location.href='sign-up.php'">Sign Up</button>
+            </div>
+            <div class="form-container">
+                <div class="form-header">
+                    <h2 class="form-title">Welcome Back!</h2>
+                    <p class="form-subtitle">Sign in to access your account</p>
+                </div>
+                <div class="form-content">
+                    <?php if ($error): ?>
+                        <div class="error"><?php echo $error; ?></div>
+                    <?php endif; ?>
+                    <form method="POST" action="sign-in.php">
+                        <div class="input-group">
+                            <label class="input-label">Email Address</label>
+                            <div class="input-eye-wrapper">
+                                <img class="input-icon" src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="">
+                                <input class="input-box" type="email" name="email" placeholder="example@gmail.com" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Password</label>
+                            <div class="input-eye-wrapper">
+                                <img class="input-icon" src="https://cdn-icons-png.flaticon.com/128/345/345535.png" alt="">
+                                <input id="signInPassword" class="input-box" type="password" name="password" placeholder="Enter your password" required>
+                                <button type="button" class="eye-toggle" onclick="togglePassword()">
+                                    <img id="eyeIcon" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="toggle">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="options-row">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="button" class="forgot-link" onclick="openForgotModal()">Forgot Password?</button>
+                        </div>
+                        <button class="submit-btn" type="submit">Sign In</button>
+                    </form>
+                    <div class="bottom-text">
+                        Don't have account? <a href="sign-up.php">Create one now</a>
+                    </div>
+                    <!-- Divider -->
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <span class="divider-text">OR</span>
+                        <div class="divider-line"></div>
+                    </div>
+                    <!-- Guest Portal Button -->
+                    <button class="guest-btn" type="button" onclick="location.href='guest-portal.php'">
+                        <span class="guest-btn-icon">i</span>
+                        <span>View Guest Portal</span>
+                    </button>
+                    <p class="guest-btn-subtitle">Learn about our services and barangay information</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Forgot Password Modal -->
     <div id="forgotModal" class="modal-overlay">
         <div class="modal-header">
@@ -1186,74 +968,6 @@ $conn->close();
         <button type="submit" class="modal-btn">Reset Password</button>
     </form>
 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Main Sign In Page -->
-    <div class="container">
-        <div class="left-panel">
-            <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTDCuh4kIpAtR-QmjA1kTjE_8-HSd8LSt3Gw&s" alt="Logo">
-            <div class="welcome-text">
-                Welcome to BCDRS<br>Your friendly assistant is here to help!
-            </div>
-        </div>
-        <div class="right-panel">
-            <div class="tab-group">
-                <button class="tab-btn active" type="button" onclick="location.href='sign-in.php'">Sign In</button>
-                <button class="tab-btn" type="button" onclick="location.href='sign-up.php'">Sign Up</button>
-            </div>
-            <div class="form-container">
-                <div class="form-header">
-                    <h2 class="form-title">Welcome Back!</h2>
-                    <p class="form-subtitle">Sign in to access your account</p>
-                </div>
-                <div class="form-content">
-                    <?php if ($error): ?>
-                        <div class="error"><?php echo $error; ?></div>
-                    <?php endif; ?>
-                    <form method="POST" action="sign-in.php">
-                        <div class="input-group">
-                            <label class="input-label">Email Address</label>
-                            <div class="input-eye-wrapper">
-                                <img class="input-icon" src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="">
-                                <input class="input-box" type="email" name="email" placeholder="example@gmail.com" required>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">Password</label>
-                            <div class="input-eye-wrapper">
-                                <img class="input-icon" src="https://cdn-icons-png.flaticon.com/128/345/345535.png" alt="">
-                                <input id="signInPassword" class="input-box" type="password" name="password" placeholder="Enter your password" required>
-                                <button type="button" class="eye-toggle" onclick="togglePassword()">
-                                    <img id="eyeIcon" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="toggle">
-                                </button>
-                            </div>
-                        </div>
-                        <div class="options-row">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="rememberMe">
-                                <label for="rememberMe">Remember me</label>
-                            </div>
-                            <button type="button" class="forgot-link" onclick="openForgotModal()">Forgot Password?</button>
-                        </div>
-                        <button class="submit-btn" type="submit">Sign In</button>
-                    </form>
-                    <div class="bottom-text">
-                        Don't have account? <a href="sign-up.php">Create one now</a>
-                    </div>
-                    <!-- Divider -->
-                    <div class="divider">
-                        <div class="divider-line"></div>
-                        <span class="divider-text">OR</span>
-                        <div class="divider-line"></div>
-                    </div>
-                    <!-- Guest Portal Button -->
-                    <button class="guest-btn" type="button" onclick="location.href='guest-portal.php'">
-                        <span class="guest-btn-icon">i</span>
-                        <span>View Guest Portal</span>
-                    </button>
-                    <p class="guest-btn-subtitle">Learn about our services and barangay information</p>
-                </div>
             </div>
         </div>
     </div>
